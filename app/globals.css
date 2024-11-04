@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+@keyframes trash-float {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-10px); }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); text-shadow: -2px 2px #ff00c1; }
+  25% { transform: translate(-2px, 2px); text-shadow: 2px -2px #00fff9; }
+  50% { transform: translate(2px, -2px); text-shadow: 2px 2px #ff00c1; }
+  75% { transform: translate(-2px, -2px); text-shadow: -2px -2px #00fff9; }
+  100% { transform: translate(0); text-shadow: -2px 2px #ff00c1; }
+}
+
+@keyframes trash-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.trash-title {
+  font-family: 'Permanent Marker', cursive;
+  animation: glitch 4s infinite;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.trash-float {
+  animation: trash-float 3s ease-in-out infinite;
+}
+
+.trash-spin {
+  animation: trash-spin 10s linear infinite;
+}
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 320 100% 50%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 145 100% 50%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 255 100% 50%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #ff00c1, #00fff9, #ff00c1);
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neon-border {
+  box-shadow: 0 0 10px #ff00c1,
+              0 0 20px #ff00c1,
+              0 0 30px #ff00c1;
+}
+
+.trash-bg {
+  background: repeating-linear-gradient(
+    45deg,
+    #000,
+    #000 10px,
+    #1a1a1a 10px,
+    #1a1a1a 20px
+  );
+}
